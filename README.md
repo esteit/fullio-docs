@@ -13,12 +13,12 @@ API работает через JSON-RPC 2.0. Компания определя�
 ## Разделы
 
 1. [Общие правила](sections/01-general.md)
-2. [Компания и dashboard](sections/02-company-dashboard.md)
+2. [Dashboard](sections/02-company-dashboard.md)
 3. [Товары](sections/03-products.md)
 4. [Остатки и движения](sections/04-inventory.md)
 5. [Поставки](sections/05-inbounds.md)
 6. [Заказы](sections/06-orders.md)
-7. [Проблемы](sections/07-problems.md)
+7. [Тикеты](sections/07-problems.md)
 8. [Файлы](sections/08-files.md)
 9. [Возвраты](sections/09-returns.md)
 10. [Биллинг](sections/10-billing.md)
@@ -29,31 +29,15 @@ API работает через JSON-RPC 2.0. Компания определя�
 - юридический раздел документов;
 - управление интеграциями и API-ключами;
 - настройка URL и секрета webhook через клиентский API;
-- поддержка и обращения;
 - настройки компании, пользователей и ролей;
 - внутренние складские методы ТСД и backend Fullio.
 
-## Endpoint
+## Реализованный API
 
-```text
-POST /api/v1/jsonrpc
-```
-
-```http
-Content-Type: application/json
-X-Authorization-Token: fullio_...
-```
-
-## Первый запрос
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": "request-1",
-  "method": "company.whoami",
-  "params": {}
-}
-```
+Рабочий контракт находится в разделе **API** личного кабинета компании
+(`/company-{companyId}/api`). Реализованные и документированные части удаляются
+из этого проекта. Здесь остаются будущие требования; наличие текста не означает
+наличия соответствующего метода. Нереализованные остатки не удаляются без решения.
 
 ## Правило изменения документации
 

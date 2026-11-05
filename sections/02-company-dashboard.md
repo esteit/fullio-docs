@@ -1,50 +1,14 @@
-# 2. Компания и dashboard
+# 2. Dashboard
 
 ## 2.1. Методы
 
 | Метод                 | Назначение                                   |
 |-----------------------|----------------------------------------------|
-| `company.whoami`      | Проверить ключ и получить компанию           |
 | `dashboard.summary`   | Получить основные показатели                 |
 | `dashboard.attention` | Получить объекты, требующие действия клиента |
 | `dashboard.activity`  | Получить последние события компании          |
 
-## 2.2. `company.whoami`
-
-Параметров нет.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": "whoami-1",
-  "method": "company.whoami",
-  "params": {}
-}
-```
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": "whoami-1",
-  "result": {
-    "api_key": {
-      "id": 10,
-      "name": "Личный кабинет"
-    },
-    "company": {
-      "id": 25,
-      "legal_name": "ООО Компания",
-      "commercial_name": "Компания",
-      "tax_id": "7700000000",
-      "contract_status": "signed"
-    }
-  }
-}
-```
-
-`contract_status`: `not_signed`, `pending`, `signed`, `suspended`, `terminated`.
-
-## 2.3. `dashboard.summary`
+## 2.2. `dashboard.summary`
 
 Параметров нет. Метод возвращает счётчики только тех разделов, которые входят в этот API.
 
@@ -103,7 +67,7 @@
 
 `damaged`, `returned` и `blocked` являются разными измерениями и могут пересекаться. Их нельзя складывать для получения `total`.
 
-## 2.4. `dashboard.attention`
+## 2.3. `dashboard.attention`
 
 Поддерживает `filter.type`, `pagination`. Типы: `product`, `inbound`, `order`, `problem`, `return`, `invoice`.
 
@@ -136,7 +100,7 @@
 
 `priority`: `low`, `normal`, `high`, `urgent`.
 
-## 2.5. `dashboard.activity`
+## 2.4. `dashboard.activity`
 
 Возвращает клиентские события: создание и изменение статуса товара, поставки, заказа, возврата, проблемы, начисления или счёта. Внутренние складские детали и пользователи склада не раскрываются.
 
